@@ -19,6 +19,7 @@ namespace WorkingDatabaseWF
     {
         SqlConnection con;
         string dirSql = "SqlTables";
+        string dirScript = "Scripts";
         string dbName = "UsersRolesCities";
         string conSTR;
         string connectionSTR;
@@ -74,22 +75,18 @@ namespace WorkingDatabaseWF
                 con.Open();
             }
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "SELECT u.Id, u.Name, r.Name AS Region, c.Name AS City, ua.Street, ua.HouseNumber " +
-                "FROM tblUsers u " +
-                "LEFT JOIN tblUserAdresses ua " +
-                "ON u.Id = ua.UserId " +
-                "LEFT JOIN tblCities c " +
-                "ON ua.CityId = c.Id " +
-                "LEFT JOIN tblRegions r " +
-                "ON c.RegionId = r.Id";
+
+            string script = File.ReadAllText($"{dirScript}\\viewUserAddresses.sql");
+            cmd.CommandText = script;
+
 
             List<User> users = new List<User>();
             using (var reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    //User user = new User() { Id = Int32.Parse(reader["Id"].ToString()), Name = reader["Name"].ToString(), Region = reader["Region"].ToString(), City = reader["City"].ToString(), Street = reader["Street"].ToString(), HouseNumber = reader["HouseNumber"].ToString() };
-                    //users.Add(user);
+                    User user = new User() { Id = Int32.Parse(reader["Id"].ToString()), Name = reader["Name"].ToString(), Region = reader["Region"].ToString(), City = reader["City"].ToString(), Street = reader["Street"].ToString(), HouseNumber = reader["HouseNumber"].ToString() };
+                    users.Add(user);
                 }
             }
             dgUsers.DataSource = users;

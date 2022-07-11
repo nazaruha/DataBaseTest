@@ -90,6 +90,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Scripts\viewUserAddresses.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SqlTables\tblUserAdresses.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

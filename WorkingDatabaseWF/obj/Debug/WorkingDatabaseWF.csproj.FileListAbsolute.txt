@@ -20,3 +20,4 @@ C:\Users\38096\Source\Repos\STEP\7) MS SQL\DataBaseTest\WorkingDatabaseWF\obj\De
 C:\Users\38096\Source\Repos\STEP\7) MS SQL\DataBaseTest\WorkingDatabaseWF\bin\Debug\SqlTables\tblUserAdresses.sql
 C:\Users\38096\Source\Repos\STEP\7) MS SQL\DataBaseTest\WorkingDatabaseWF\bin\Debug\Bogus.dll
 C:\Users\38096\Source\Repos\STEP\7) MS SQL\DataBaseTest\WorkingDatabaseWF\bin\Debug\Bogus.xml
+C:\Users\38096\Source\Repos\STEP\7) MS SQL\DataBaseTest\WorkingDatabaseWF\bin\Debug\Scripts\viewUserAddresses.sql
